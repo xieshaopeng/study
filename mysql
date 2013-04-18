@@ -1,0 +1,20 @@
+1.删除表
+TRUNCATE TABLE 表名
+or 
+delete table 表名
+or 
+delete table 表名
+where
+2.CONCAT
+MySQL concat函数使用方法：
+CONCAT(str1,str2,…) 
+返回结果为连接参数产生的字符串。如有任何一个参数为NULL ，则返回值为 NULL
+#
+select concat('aa','bb');------------最终显示的就是 aabb,同时，concat有 to_char的作用，就是把其他类型转成varchar类型的
+3.
+UPDATE vtiger_field set typeofdata = 'V~O~LE~100' where fieldname ='cf_643'
+4.delete======>
+DELETE FROM Person WHERE LastName = 'Wilson'
+5.update===>
+UPDATE Person SET Address = 'Zhongshan 23', City = 'Nanjing'
+WHERE LastName = 'Wilson'
