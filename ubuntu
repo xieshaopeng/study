@@ -1,0 +1,105 @@
+#########文件传输
+操作要求：在Ubuntu中将一个文件复制到指定的目录下：例如现在桌面上有一个文件（其名字是www.linuxidc.com.tar.gz）,现在要把这个文件复制到/usr/local目录下。其操作步骤如下：
+
+1）打开终端，输入#su(#不作为输入)
+
+2）输入口令，就切换到root用户下
+
+3)此时终端显示的是root@linuxidc-desktop:/home/linuxidc#
+
+4)由于文件是在桌面上，先切换到桌面目录下,输入后：root@linuxidc-desktop:/home/linuxidc# cd 桌面
+
+5）root@linuxidc-desktop:/home/linuxidc/桌面# cp -r www.linuxidc.com_tar.gz /usr/local
+
+6)回车，OK！ 打开文件系统看看/usr/local目录下是否有www.linuxidc.com_tar.gz这个文件。
+
+
+
+
+######################################
+1.
+查看ubuntu版本
+cat /etc/issue
+2. 
+if something lock  try===>
+sudo rm /var/lib/dpkg/lock
+3.
+运行脚本
+a. chmod 777 /home/xieshaopeng/Desktop/aliedit.sh
+b. /home/xieshaopeng/Desktop/aliedit.sh
+4.
+查看IP 
+ifconfig
+查看IP 网关
+ifconfig -a |grep inet
+5.
+ping========>
+ping -c 次数 domain
+6.
+sudo apt-get update 更新源 sudo apt-get upgrade 更新已安装的包
+7.
+常用的APT命令参数：
+　
+　　apt-cache search package 搜索包
+　
+　　apt-cache show package 获取包的相关信息，如说明、大小、版本等
+　
+　　sudo apt-get install package 安装包
+　
+　　sudo apt-get install package - - reinstall 重新安装包
+　
+　　sudo apt-get -f install 修复安装"-f = ——fix-missing"
+　
+　　sudo apt-get remove package 删除包
+　
+　　sudo apt-get remove package - - purge 删除包，包括删除配置文件等
+　
+　　sudo apt-get update 更新源
+　
+　　sudo apt-get upgrade 更新已安装的包
+　
+　　sudo apt-get dist-upgrade 升级系统
+　
+　　sudo apt-get dselect-upgrade 使用 dselect 升级
+　
+　　apt-cache depends package 了解使用依赖
+　
+　　apt-cache rdepends package 是查看该包被哪些包依赖
+　
+　　sudo apt-get build-dep package 安装相关的编译环境
+　
+　　apt-get source package 下载该包的源代码
+　
+　　sudo apt-get clean && sudo apt-get autoclean 清理无用的包
+　
+　　sudo apt-get check 检查是否有损坏的依赖
+如何在ubuntu下面直接查找想要安装的软件。比如我想安装tomcat.但是我又不知道里 面有哪种版本，也不知道都需要装什么，但是我能确认我装的是tomcat那么我就可以用搜索命令：例如：$apt-cache search tomcat,这样就知道ubuntu的软件库里面有tomcat5,那么就可以用$apt-get install tomcat5去安装了APT 源自 Debian GNU/Linux，Debian 在同一个版本编号下，依套件成熟度又分 stable、testing、unstable。 
+若我们现在用的是 Debina 3.0r2 stable，使用 apt-get upgrade 
+就可以升级for stable 的软件，而使用 apt-get dist-upgrade 则可以选择将系统由 stable 升级到 testing 或是 unstable， 
+使用 apt-get upgrade 和 apt-get dist-upgrade 的结果，基本上是一样的，不过apt-get dist-upgrade 在升级的同时会为了解决相依性而安装新套件，而 apt-get upgrade 并不会，因此要升级的话，建议还是用 apt-get dist-upgrade 较佳 
+apt-cache search 
+搜寻：我们可以用这个指令来搜寻升级包， 
+例如：apt-cache search httpd， 
+apt-cache depends 
+相依性：我们可以用这个指令来看到软件包的所有相依性档案， 
+例如：apt-cache depends httpd， 
+apt-get install 
+安装：安装软件包， 
+例如：apt-get install httpd，这样 apt 就会自动上网下载httpd 回来安装，若httpd 有相依性套件的时候，apt 也会自动下载安装 
+apt-get clean 
+清除：当使用 apt-get install 指令安装套件，下载下来的 rpm 会放置於 /var/cache/apt/archives，使用 apt-get clean 指令可以将之清除，避免占用硬碟空间 
+apt-get remove 
+移除：例如：apt-get remove httpd，就会移除 httpd 了，假如有相依性套件的时候，apt 也会一并移除 
+以上这几个指令应该就够用了，若想要得到更进一步的指令，请善用 man：） 
+apt-get update 
+更新：这指令是用来取得记录在 /etc/apt/sources.list 内的远端服务器的套件档案清单 在使用 「apt-get dist-upgrade」指令升级套件前，一定要记得先用这条指令将套件档案清单更新 
+apt-get dist-upgrade 
+升级：这里的升级主要是根据已有的软件包更新而言，并不是更新整个系统，也可以使用图形界面的新立得包管理器：） 
+如果没有安装这个管理器的话，可以执行以下指令 
+apt-get install synaptic 
+8.
+新建文件夹===》
+sudo mkdir ////
+9.
+apt-get update 
+apt-get upgrade
