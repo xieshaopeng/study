@@ -1,0 +1,14 @@
+1.There are three data types in Python that are of interest to us at the moment: integers, floats (fractional numbers written with a decimal point, like 1.970), and booleans (which can be True or False).
+Never use quotation marks (' or ") with booleans
+2.Python is case-sensitive 
+#my_bool=True ===>  注意大小写
+3.change the value
+。。。。
+my_int=7
+...
+my_int=3
+...
+print my_int  ====> 3
+4.whitespace
+To continue the sentence analogy, it's clear that we also need a kind of punctuation to make it obvious where one statement ends and another begins. If you're familiar with JavaScript, you know that statements end with a semicolon (;). In Python, statements are separated by whitespace
+5.whitespace means right space
