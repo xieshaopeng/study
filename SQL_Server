@@ -164,7 +164,8 @@ if object_id('tempdb.dbo.#TaobaoWangwang_T1') is not null
  22.
  count(1)=count(*)，其实就是计算一共有多少符合条件的行
 23.
-
+join ===>
+full ,left ,right ,inner,cross & join
  
  
  
