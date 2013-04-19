@@ -162,7 +162,9 @@ if object_id('tempdb.dbo.#TaobaoWangwang_T1') is not null
  21.余数=====》
  SUM(DocumentStatusId)%2  ---整除2余
  22.
- 
+ count(1)=count(*)，其实就是计算一共有多少符合条件的行
+23.
+
  
  
  
