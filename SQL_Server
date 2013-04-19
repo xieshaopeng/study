@@ -1,0 +1,168 @@
+点滴
+1.pivot
+select  [userid],[0],[1],[2],[3],[4],[5],[6],[7],[8]
+from
+(SELECT  distinct TypeId ,UserId
+  FROM [ppdai].[dbo].[InpourOnline]) a
+ pivot
+ (sum(typeid) for typeid in ([0],[1],[2],[3],[4],[5],[6],[7],[8])) b
+ order by 1
+unpivot
+SELECT PName,电话类型,电话号码
+FROM tb_Tel
+UNPIVOT(电话类型 FOR 电话号码 IN (Mobile1,Mobile2,Mobile3) ) p
+
+
+2.尽量以小表的形式进行查询，而不要全表查询
+3.isnull==>ISNULL ( check_expression , replacement_value )
+4.字符串长度len()
+5. substring字段名,起始位置,取字符长度)
+6.rank() over (partition by xx order by xx)
+#   rank() over(partition by deptno order by sal desc) 
+7.转换成字符型
+CAST ( expression AS data_type )  or  CONVERT (data_type[(length)], expression [, style])
+8.聚合函数
+ AVG  返回指定组中的平均值，空值被忽略。 
+ 例：select  prd_no,avg(qty) from sales group by prd_no 
+
+ COUNT  返回指定组中项目的数量。 
+ 例：select  count(prd_no) from sales 
+
+ MAX  返回指定数据的最大值。 
+ 例：select  prd_no,max(qty) from sales group by prd_no 
+
+ MIN  返回指定数据的最小值。 
+ 例：select  prd_no,min(qty) from sales group by prd_no 
+
+ SUM  返回指定数据的和，只能用于数字列，空值被忽略。 
+ 例：select  prd_no,sum(qty) from sales group by prd_no 
+
+ COUNT_BIG  返回指定组中的项目数量，与COUNT函数不同的是COUN 
+ 例：select  count_big(prd_no) from sales 
+
+ GROUPING  产生一个附加的列，当用CUBE或ROLLUP运算符添加行时 
+ 例：select  prd_no,sum(qty),grouping(prd_no) from sales 
+
+ BINARY_CHECKSUM  返回对表中的行或表达式列表计算的二进制校验 
+ 例：select  prd_no,binary_checksum(qty) from sales group 
+
+ CHECKSUM_AGG  返回指定数据的校验值，空值被忽略。 
+ 例：select  prd_no,checksum_agg(binary_checksum(*)) from 
+
+ . CHECKSUM  返回在表的行上或在表达式列表上计算的校验值，用于 
+
+ . STDEV  返回给定表达式中所有值的统计标准偏差。 
+ 例：select  stdev(prd_no) from sales 
+
+ . STDEVP  返回给定表达式中的所有值的填充统计标准偏差。 
+ 例：select  stdevp(prd_no) from sales 
+
+ . VAR  返回给定表达式中所有值的统计方差。 
+ 例：select  var(prd_no) from sales 
+
+ . VARP  返回给定表达式中所有值的填充的统计方差。 
+ 例：select  varp(prd_no) from sales 
+9. like '%express%'
+#用charindex代替LIKE
+select count(*) from Northwind.dbo.Customers where CHARINDEX('Rd',Address) > 0 or CHARINDEX('Road',Address)> 0
+10. 连接两字符  "+"  
+#  DATENAME(year,creationdate)+DATENAME(MONTH,creationdate)
+11.CHARINDEX (代替LIKE)
+#  WHERE CHARINDEX('登录',Description)>0
+12.full join是把左右两表的有关联的数据行关联显示，
+没有关联的行单独显示，另一个表的数据则用null填充
+13.######### 
+insert
+###################
+set identity_insert ppdai_new.DBO.NewListTypes2 ON
+INSERT INTO ppdai_new.DBO.NewListTypes2(NewListTypeId2,Name,CategoryName)
+VALUES('17','网络达人','网络达人')
+set identity_insert ppdai_new.DBO.NewListTypes2 OFF
+14.delete
+#####
+delete  FROM [ppdai_new].[dbo].[NewListTypes2]
+where NewListTypeId2=17
+15.
+判断数据库对象是否存在  if object_id(N'对象名',N'对象类型') is not null  执行语句 
+###
+删除用户表 
+if object_id(N'表名',N'U') is not null drop table 表名    
+删除存储过程  
+if object_id(N'存储过程名',N'P') is not null drop procedure 存储过程名
+16.
+IDENTITY (1, 1)
+===》
+自动增长的意思
+比如id是这个的话
+那你插入数据一般不能插id进去。
+它会自动增加（从1开始）
+17.
+USE { database }
+database
+用户上下文要切换到的数据库或数据库快照的名称。 数据库和数据库快照名称必须符合标识符规则。
+18.
+substring(CONVERT(varchar,lt.creationdate,112),1,6)   YYYYMM
+19.
+create table ===>
+########################################
+create table [taobaodata].dbo.TBshopResult
+  (
+	  TotalID int not null PRIMARY KEY
+      ,[淘宝URL] nvarchar(100) 
+      ,[淘宝店铺编号] int not null
+      ,[店铺类型]   nvarchar(30)
+      ,[经营范围]   nvarchar(50)
+      ,[地区]	   nvarchar(30)
+      ,[淘宝旺旺]	 nvarchar(50)
+      ,[好评率]		 decimal(5,2)
+      ,[卖家等级]	 nvarchar(30)
+      ,[商品与描述相符度]	   decimal(5,1)
+      ,[商品与描述相符度同业水平]   decimal(5,2)
+      ,[服务态度]	   decimal(5,1)
+      ,[服务态度同业水平]	 decimal(5,2)
+      ,[发货速度]			 decimal(5,1)
+      ,[发货速度同业水平]	   decimal(5,2)
+      ,[近一个月好评]	  int not null
+      ,[近一个月中评]	  int not null
+      ,[近一个月差评]	  int not null
+      ,[近半年好评]		int not null
+      ,[近半年中评]	   int not null
+      ,[近半年差评]	   int not null
+      ,[创建时间]	 datetime
+      ,[修改时间]	 datetime not null
+	  )
+insert into [taobaodata].dbo.TBshopResult
+select   *
+from taobaodata..TaobaoShopResult_Init tsi
+where tsi.淘宝旺旺  not in
+  (select  ucd.Value
+from  ppdai..UserCorrelation uc 
+inner join ppdai_ThirdParty..UserCorrelationDetail ucd on uc.CorrelationId=ucd.CorrelationId
+where uc.RelatedType=6   and ucd.Property='Nick')
+
+
+
+
+
+
+
+==========》
+ALTER TABLE [taobaodata].dbo.TBshopResult
+ADD PRIMARY KEY (TotalID)	  
+	  
+	  
+	  
+
+20.
+删除表=============》
+#######################
+if object_id('tempdb.dbo.#TaobaoWangwang_T1') is not null
+	drop table #TaobaoWangwang_T1
+ 
+ 21.余数=====》
+ SUM(DocumentStatusId)%2  ---整除2余
+ 22.
+ 
+ 
+ 
+ 
