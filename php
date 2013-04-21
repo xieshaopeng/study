@@ -668,6 +668,7 @@ You can even delete the whole array:
 <?php
   unset($array);
 ?>
+37.
 
 
 
