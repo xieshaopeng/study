@@ -798,4 +798,10 @@ print join(", ", $names);
 //
 $list=array("me","bf","mon","dad","sister");
 print $list[1]  // print bf
+54.
+//creat a function
+function name(parameters) {
+  statement;
+}
+55.
 
