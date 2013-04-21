@@ -705,6 +705,97 @@ $i+1
 rand() 函数返回随机整数。
 rand(min,max)  
 42.
- 
+ <?php
+$i = 1;
+while ($i <= 10):
+	echo $i++;
+endwhile; 
+?>
+// equal to 
+<?php
+$i = 1;
+while ($i <= 10) {
+	echo $i++;
+}
+?>
+43.
+// do..while
+<html>
+<body>
 
+<?php
+$i=1;
+do
+  {
+  $i++;
+  echo "The number is " . $i . "<br>";
+  }
+while ($i<=5);
+?>
+
+</body>
+</html>
+44.
+//?????????????
+ <?php
+		$loopCond = false;
+		do 
+			{echo "<p>The loop ran even though the loop condition is false.</p>";}
+		while ($loopCond);
+		{echo "<p>Now the loop is done running.</p>";}
+    ?>
+45.
+//字符长度
+$length=strlen("baby");
+print $length;
+46.
+// UPPER & LOWER
+$uppercase = strtoupper($myname);
+print $uppercase;
+// prints "DAVID"
+
+$lowercase = strtolower($uppercase);
+print $lowercase;
+// prints "david"
+47.
+// something like substring() in sql
+$myname = "David";
+
+// you can manipulate strings easily
+// with built-in funtions too
+$partial = substr($myname, 0, 3);
+print $partial;
+// prints "dav"
+48.
+//strpos()  and Remember, PHP starts counting string characters at 0!
+$pos = strpos("david", "v");
+print $pos;  // prints 2
+49.
+// round()
+$round_decimal = round(M_PI, 4);
+print $round_decimal; // prints 3.1416
+50.
+ceil() //向上取整
+floor() //向下取整
+
+// prints a number between 0 and 32767
+print rand();
+
+// prints a number between 1 and 10
+print rand(1,10);
+
+51.
+//array_push() 函数向第一个参数的数组尾部添加一个或多个元素（入栈），然后返回新数组的长度
+array_push(array,value1,value2...)
+52.
+//
+// sort()  // a-z
+// rsort()  //z-a
+$names = array("david","alana","violet","rory");
+sort($names);
+print join(", ", $names);
+53.
+//
+$list=array("me","bf","mon","dad","sister");
+print $list[1]  // print bf
 
