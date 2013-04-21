@@ -625,13 +625,49 @@ creat a array===>
       $friends=array("a","b",'c');
       ?>
 33.
+//array print ,start from 0
+<?php
+ $array = array("first", "middle", "last");
+ echo $array[0];
+ // prints "first"   alse could be isteaded by print $array {2};  
+?>
+34.
+// Modifying Array Elements
+<?php
+  array("red", "blue", "yellow");
+?>
+can be thought of as
 
+<?php
+  array(0 => "red",
+  1 => "blue",
+  2 => "yellow");
+?>
+35.
+//modify array
+ <p>
+      <?php
+        $languages = array("HTML/CSS",
+        "JavaScript", "PHP", "Python", "Ruby");
+        $languages[2]="xsp";
+        echo $languages[2];
+        // Write the code to modify
+        // the $languages array!
+        
+      ?>
+    </p>
+36.
+// delete array ===>unset
 
+<?php
+  $array = ("red", "blue", "green");
+  unset($array[3]);
+?>
+You can even delete the whole array:
 
-
-
-
-
+<?php
+  unset($array);
+?>
 
 
 
