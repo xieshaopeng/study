@@ -33,7 +33,8 @@ $number = 16;
 变量名只能包含字母数字字符以及下划线。
 变量名不能包含空格。如果变量名由多个单词组成，那么应该使用下划线进行分隔（比如 $my_string），或者以大写字母开头（比如 $myString）
 12.echo ===》输出
-13.并置运算符 .  ===》连接字符串
+13.并置运算符 .  
+=》连接字符串
 14.
 strlen() 计算字符串长度
 strpos() 函数用于在字符串内检索一段字符串或一个字符。
@@ -669,8 +670,41 @@ You can even delete the whole array:
   unset($array);
 ?>
 37.
+// creat a loop
+  <?php
+      for ($leap = 2004; $leap < 2050; $leap = $leap + 4) {
+        echo "<p>$leap</p>";
+      }
+    ?>
+38.
+A for loop starts with the for keyword. This tells PHP to get ready to loop!
+Next comes a set of parentheses (()). Inside the parentheses, we tell PHP three things, separated by semicolons (;): where to start the loop; where to end the loop; and what to do to get to the next iteration of the loop (for instance, count up by one).
+After the part in parentheses, the part in curly braces ({}) tells PHP what code to run for each iteration of the loop.
+So the above example says: "Start looping with $i at 0, stop the loop before $i gets to 10, count up by 1 each time, and for each iteration, echo the current value of $i."
 
+($i++ is shorthand for $i = $i + 1. You'll see this a lot!)
 
+39.
+// infinite loop
+$i+1
+40.
+//foreach
+ <?php
+        $yardlines = array("The 50... ", "the 40... ",
+        "the 30... ", "the 20... ", "the 10... ");
+        // Write your foreach loop below this line
+        foreach($yardlines as $i)
+        {
+            echo $i;
+        }
+        
+        // Write your foreach loop above this line
+        echo "touchdown!";
+      ?>
+41.
+rand() 函数返回随机整数。
+rand(min,max)  
+42.
 
 
 
