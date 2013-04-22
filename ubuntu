@@ -103,3 +103,5 @@ sudo mkdir ////
 9.
 apt-get update 
 apt-get upgrade
+10.
+sudo gedit /etc/hosts   # modify hosts
