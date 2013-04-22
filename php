@@ -850,4 +850,67 @@ function name(parameters) {
         echo $me->greet(); 
         ?>
 58
+// example1
+ <?php
+      class person{
+          public $isAlive=true;
+          public $firstname;
+          public $lastname;
+          public $age;
+          public function __construct($firstname,$lastname,$age){
+              $this->firstname=$firstname;
+              $this->lastname=$lastname;
+              $this->age=$age;
+          }
+          public function greet(){
+              return 'Hello,my name is'.$this->firstname." ".$this->lastname.".Nice to meet you !:-)";
+          }
+      }
+      $teacher=new person('boring','12345',12345);
+      $student=new person('interesting','1',1);
+      echo $student-> greet();
+      echo $teacher-> greet();
+      echo $teacher-> age;
+      ?>
+
+//example2
+    <?php
+        class Dog{
+            public $numLegs=4;
+            public $name;
+            public function __construct($name){
+                $this->name=$name;
+            }
+          public function bark(){
+              return "Woof!";
+          }
+          public function greet(){
+              return "hello,".$this->name."!";
+          }
+        }
+          $dog1=new Dog("Barker");
+          $dog2=new Dog("Amigo");
+          echo $dog1->bark();
+          echo $dog2->greet();
+          
+        ?>
+//example3
+  <?php
+          // Your code here
+          class Cat{
+              public $isAlive=true;
+              public $numLegs=4;
+              public $name;
+              public function __construct($name){
+                  $this->name;
+              }
+              public function meow(){
+                  return "Meow meow";
+              }
+          }
+          $cat1=new Cat("CodeCat");
+          echo $cat1->meow();
+        ?>
+59.
+
 
