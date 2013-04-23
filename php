@@ -902,7 +902,7 @@ function name(parameters) {
               public $numLegs=4;
               public $name;
               public function __construct($name){
-                  $this->name;
+                  $this->name=$name;
               }
               public function meow(){
                   return "Meow meow";
@@ -912,5 +912,35 @@ function name(parameters) {
           echo $cat1->meow();
         ?>
 59.
+//is_a(), which we use to find out if a particular object is an instance of a given class;
+//property_exists(), to see if an object has a given property; 
+//method_exists(), to see if an object has a given method.
+ <?php
+        class Person {
+          public $isAlive = true;
+          
+          function __construct($name) {
+              $this->name = $name;
+          }
+          
+          public function dance() {
+            return "I'm dancing!";
+          }
+        }
+        
+        $me = new Person("Shane");
+        if (is_a($me, "Person")) {
+          echo "I'm a person, ";
+        }
+        if (property_exists($me, "name")) {
+          echo "I have a name, ";
+        }
+        if (method_exists($me, "dance")) {
+          echo "and I know how to dance!";
+        }
+      ?>
 
-
+60.
+// extends
+class 子类 extends 父类{
+}
