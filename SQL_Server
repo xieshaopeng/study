@@ -166,6 +166,38 @@ if object_id('tempdb.dbo.#TaobaoWangwang_T1') is not null
 23.
 join ===>
 full ,left ,right ,inner,cross & join
- 
+24.
+-----
+identity(1,1)
+-------------
+use ppdai_new
+go
+create table user_reg_listing
+(ID int primary key identity(1,1),
+ Userid int not null ,
+ Regdate datetime null,
+ RegName	nvarchar(50) null,
+ ListingId	int null,
+ Amount money  null,
+ Poundage money null,
+ ListCreationDate datetime null,
+ ListAuditingDate datetime null,
+ IsSuc bit null 
+)
+#################################
+insert into	ppdai_new..user_reg_listing 
+(Userid,Regdate ,RegName,ListingId,Amount,Poundage,ListCreationDate,ListAuditingDate,IsSuc)
+select uds.UserId ,uds.CreationDate regdate ,rs.Name name,isnull(lt.ListingID,0)  listingid,ISNULL(lt.Amount,0) amount,
+       isnull(lt.Poundage,0) poundage,isnull(lt.CreationDate,0)  listcreationdate,isnull(lt.AuditingDate,0) listauditingdate,
+       case when lt.StatusID In(4,12) then 1 else 0 end 'issuc'
+from ppd..UserDetails uds 
+inner join ppdai_new..RegSources rs on uds.RegsourceId=rs.RegSourceId 
+left join ppdai..Listing lt on lt.BorrowerID=uds.UserId and lt.StatusID <>11
+
+###################################
+delete from  ppdai_new..user_reg_listing 
+
+25.
+
  
  
