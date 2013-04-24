@@ -1,1 +1,4 @@
 1
+httpd -v
+mysql -v
+php -v
