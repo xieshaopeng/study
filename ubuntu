@@ -105,3 +105,7 @@ apt-get update
 apt-get upgrade
 10.
 sudo gedit /etc/hosts   # modify hosts
+11.
+sudo mkdir //  #make directory&folder
+sudo rm -r // remove folder
+sudo cp -r //copy folder
