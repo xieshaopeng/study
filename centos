@@ -1,4 +1,6 @@
-1
+1.
 httpd -v
 mysql -v
 php -v
+2.
+  eth0  网络设置
