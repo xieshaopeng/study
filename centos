@@ -4,3 +4,8 @@ mysql -v
 php -v
 2.
   eth0  网络设置
+3.//update
+su -c 'yum update'
+
+//update automatically
+su -c '/sbin/chkconfig --level 345 yum on; /sbin/service yum start'
