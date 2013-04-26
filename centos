@@ -9,3 +9,7 @@ su -c 'yum update'
 
 //update automatically
 su -c '/sbin/chkconfig --level 345 yum on; /sbin/service yum start'
+4.
+#start chrome
+/opt/google/chrome/google-chrome  --user-data-dir &U
+
