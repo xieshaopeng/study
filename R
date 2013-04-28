@@ -1,0 +1,61 @@
+1.赋值语句
+x <- c(10.4, 5.6, 3.1, 6.4, 21.7)
+assign("x", c(10.4, 5.6, 3.1, 6.4, 21.7))  
+# c()和assign()为赋值语句
+2.
+> x<-c(1,2,3,4,5)
+> mean(x)
+[1] 3
+#运算函数：log，exp，sin，cos，tan，sqrt，var
+
+3.
+逻辑运算符< , <=,> , >=, 严格等于==  不等！=
+4.交  c1&c2  并 c1|c2
+5.缺损值  ？？？？
+6.
+
+=====ding r intro   P22
+
+
+7.a <- c(2:6) is equivalent to a <- c(2, 3, 4, 5, 6).
+8.
+R function
+sqrt ： 开平方函数 
+abs  ： 绝对值函数 
+exp  ： 2.71828… 
+expm1  ： 当x的绝对值比1小很多的时候，它将能更加正确的计算exp(x)-1 
+log  ： 对数函数 
+log10  ： 对数（底为10）函数 
+log2  ： 对数（底为2）函数 
+sin  ： 正弦函数 
+cos  ： 余弦函数 
+tan  ：  正切函数 
+asin  ：  反正弦函数 
+acos  ：  反余弦函数 
+atan  ：  反正切函数 
+sinh  ：  超越正弦函数 
+cosh  ：  超越余弦函数 
+tanh  ：  超越正切函数 
+asinh  ：  反超越正弦函数 
+acosh  ：  反超越余弦函数 
+atanh  ：  反超越正切函数 
+logb  ：  和log函数一样 
+log1px  ：  当x的绝对值比1小很多的时候，它将能更加正确的计算log(1+x) 
+gamma  ：  Γ函数（伽玛函数） 
+lgamma  ：  等同于log(gamma(x)) 
+ceiling  ：  返回大于或等于所给数字表达式的最小整数 
+floor  ：  返回小于或等于所 给数字表达式的最大整数 
+trunc  ：  截取整数部分 
+round  ：  四舍五入 
+signif(x,a)  ：  数据截取函数 x：有效位 a：到a位为止
+9.
+install r packages===>
+install.packages("Rweibo", repos = "http://jliblog.com/cran")
+
+10.update =====》
+update.packages()
+
+
+
+
+
