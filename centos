@@ -12,4 +12,5 @@ su -c '/sbin/chkconfig --level 345 yum on; /sbin/service yum start'
 4.
 #start chrome
 /opt/google/chrome/google-chrome  --user-data-dir &U
-
+5.
+:wq  //close text in terminal
