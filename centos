@@ -14,3 +14,9 @@ su -c '/sbin/chkconfig --level 345 yum on; /sbin/service yum start'
 /opt/google/chrome/google-chrome  --user-data-dir &U
 5.
 :wq  //close text in terminal
+6.
+//download to a folder and install it
+cd /var/www
+wget  http....
+rpm --Uvh
+7.
