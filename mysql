@@ -19,3 +19,4 @@ DELETE FROM Person WHERE LastName = 'Wilson'
 UPDATE Person SET Address = 'Zhongshan 23', City = 'Nanjing'
 WHERE LastName = 'Wilson'
 6.
+root@% ----访问权限
