@@ -23,7 +23,7 @@ rpm --Uvh
 // install xpdf
 http://my.oschina.net/lijialong/blog/109499
 8.
-//rpm commond
+//rpm commond   ===>only install rpm package
 rpm包的安装：
 安装一个包==>rpm -ivh
 升级一个包==>rpm -Uvh
@@ -57,3 +57,12 @@ rpm -e 文件名==>这个命令就是你想卸载的软件，后面是包名称�
 yum install 包名
 yum卸载==>yum -y remove 包名
 10.
+//cp commond
+cp -r  /root/Desktop/navicat101_mysql_en /usr/navicat     // -r "remove all the stuff in the folder" 
+11.
+//check centos version
+cat /proc/version
+// x86_64 ==> 64bit   i686==> 32bit
+12.
+
+
