@@ -64,5 +64,23 @@ cp -r  /root/Desktop/navicat101_mysql_en /usr/navicat     // -r "remove all the 
 cat /proc/version
 // x86_64 ==> 64bit   i686==> 32bit
 12.
+//vtigercrm shell
+##33
+
+cd /var/www/html
+tar -zcvf vtigercrm-20130426_33_1730.tar.gz vtigercrm --exclude=*.sql --exclude=*.zip
+
+
+##202
+cd /var/www/html
+rm -rf vtigercrm
+tar -zxvf vtigercrm-20130422.tar.gz
+
+chown -R nginx:apache vtigercrm
+chmod -R 775 vtigercrm
+
+
+# config.inc.php ====> db_password ====>modify
+
 
 
