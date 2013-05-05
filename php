@@ -944,3 +944,82 @@ function name(parameters) {
 // extends
 class 子类 extends 父类{
 }
+//overriding
+<?php
+
+class Foo {
+   function myFoo() {
+      return "Foo";
+   }
+}
+
+class Bar extends Foo {
+   function myFoo() {
+      return "Bar";
+   }
+}
+$foo = new Foo;
+$bar = new Bar;
+echo($foo->myFoo()); //"Foo"
+echo($bar->myFoo()); //"Bar"
+?>
+// set 'final' to end the overrideing
+// const  定义常量
+//static ??
+class Person {
+  public static $isAlive = "Yep!"
+  public static function greet() {
+    echo "Hello there!";
+  }
+}
+
+echo Person::$isAlive;
+// prints "Yep!"
+Person::greet();
+// prints "Hello there!"
+61.
+//example
+
+      <?php
+      // Create a Person class here:
+       class Person{
+         public $name;
+         public function __construct($name){
+            $this->name=$name;
+        }
+      }
+      $me=new Person("luke");
+     
+      // And create a Person instance called $me here:
+      ?>
+62.
+<br/> //换行
+63.
+//instance
+<?php    
+        $food = array('pizza', 'salad', 'burger');
+        $salad = array('lettuce' => 'with',
+                   'tomato' => 'without',
+                   'onions' => 'with');
+    
+      // Looping through an array using "for".
+      // First, let's get the length of the array!
+      $length = count($food);
+    
+      // Remember, arrays in PHP are zero-based:
+      for ($i = 0; $i < $length; $i++) {
+        echo $food[$i] . '<br />';
+      }
+    
+      echo '<br /><br />I want my salad:<br />';
+    
+      // Loop through an associative array using "foreach":
+      foreach ($salad as $ingredient=>$include) {
+        echo $include . ' ' . $ingredient . '<br />';
+      }
+    
+      echo '<br /><br />';
+     ?>
+64.
+
+
