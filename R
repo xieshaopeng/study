@@ -96,7 +96,8 @@ Rweibo =========>
 欲知用户目录在哪儿，请在R中执行：
 
 normalizePath('~')
-
+20.
+ vignette("RODBC")   //查看package的文档
 
 
 
