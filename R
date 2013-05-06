@@ -98,7 +98,13 @@ Rweibo =========>
 normalizePath('~')
 20.
  vignette("RODBC")   //查看package的文档
-
-
+21.
+//RODBC
+> ch<-odbcConnect(DSNname)
+> sqlQuery(ch,paste("select ....from....."))
+> 
+22.
+//ggplot2
+ggplot(data=c,aes(x=creationdate,y=RegCount))+geom_line()+geom_point()
 
 
