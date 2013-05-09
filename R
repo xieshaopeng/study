@@ -106,5 +106,12 @@ normalizePath('~')
 22.
 //ggplot2
 ggplot(data=c,aes(x=creationdate,y=RegCount))+geom_line()+geom_point()
+23.
+// RODBC
+注册量 & YOY & MOM & linear chart
+require(RODBC)
+ ch<-odbcConnect("dataforr")   // DSN="dataforr"  assigned to MATRIX
+ #DATA  sqlQuery(ch," select  rank()over(order by substring(convert(nvarchar,a.creationdate,112),1,6)) rankno,substring(convert(nvarchar,a.creationdate,112),1,6) creationdate,count(*) RegCount from ppd..userdetails a where year(a.creationdate)>2008 group by substring(convert(nvarchar,a.creationdate,112),1,6)")
+ 
 
 
