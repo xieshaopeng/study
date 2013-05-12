@@ -1,0 +1,138 @@
+1.<!DOCTYPE html>
+  <strong>haha</strong>   粗体
+2.
+a. Always put <!DOCTYPE html> on the first line. This tells the browser what language it's reading (in this case, HTML).
+b. Always put <html> on the next line. This starts the HTML document.
+c. Always put </html> on the last line. This ends the HTML document.
+3.
+#Things inside <>s are called tags.
+Tags nearly always come in pairs: an opening tag and a closing tag.
+Example of opening tag: <html>
+Example of closing tag: </html>
+#close in right order
+<first tag><second tag>Some text!</second tag></first tag>
+4.tag 种类
+结构	*html	*head	*body	*div	*span		MetaInformation	*DOCTYPE	*title	*link	*meta	*style		文字	*p	*h1,h2,h3,h4,h5,h6	*strong	*em	*abbr	*acronym	*address	*bdo	*blockquote	*cite	*q	*code	*ins	*del	*dfn	*kbd	*pre	*samp	*var	*br		连接	*a	*base		图片、对象	*img	*area	*map	*object	*param		列表	*ul	*ol	*li	*dl	*dt	*dd		表格	*table	*tr	*td	*th	*tbody	*thead	*tfoot	*col	*colgroup	*caption		表单	*form	*input	*textarea	*select	*option	*optgroup	*button	*label	*fieldset	*legend		脚本	*script	*noscript		文字修饰	*b,i,tt,sub,sup,big,small,hr
+5.
+<TITLE>XX</TITLE>  最上头的标签XX
+
+6.
+a. set up an HTML file with tags
+b. title the webpage (in the <head>)
+c. create paragraphs (in the <body>)
+
+7.
+Remember: paragraphs require <p></p> tags!
+=》  <h1><p>22222</p></hi> 
+#<h1> is the boss and <h6> is puny
+
+8.IMAGE ==>	<img src="http://bit.ly/PK1euu" />
+9.
+image link
+	<a href="www.sina.com">
+        <img src="http://bit.ly/PK1euu" /></a>  [src tag must be lowercase to continue.]
+ text link  =>     <A HREF="WWW.BAIDU.COM">AAA</A>
+10.The <p> tag defines a paragraph.
+<p>标签可定义一段落
+11.
+we begin the ordered list with the opening tag <ol>.
+each individual item with <li> and </li> tags.
+<ol>
+<li>raindrops on roses</li>
+<li>whiskas on kittens</li>
+<li>call of duty: modern warfare</li>				
+</ol>
+12.not number list but unordered list 
+<ul> 
+    <li> random thing 1 </li>
+    <li> random thing 2 </li>
+</ul>
+13.lists insider a list 
+	<ol>
+			<li>Dad's interests
+				<ul>
+					<li>football</li>
+					<li>knitting</li>
+				</ul>
+			</li>
+			<li>Mom's interests
+				<ul>
+					<li>hating football</li>
+					<li>skydiving</li>
+				</ul>
+			</li>
+		</ol>
+14. in your HTML code that the browser won't display.=><!-- comment -->
+15.font size=>	<p style="font-size:8px"> Some text for you to make normal size!</p>
+16.font-size and color=>  <h2 style="color: green; font-size:12px">
+ font-family=>文字图形
+17.background-color==>  	<h3 style="background-color:red">Favorite Football Teams</h3>
+18.<h1 style="text-align:center">
+19.strong word==>   	<p>No I don't. I'm <strong>too</strong> busy eating cake.</p>
+20.	斜体字排版  <p>Hey, don't say <em>that</em>!</p>
+
+
+##<!DOCTYPE html>
+<html>
+	<head>
+		<title>xieshaopeng</title>
+	</head>
+	<body style="background-color:black">
+     <image src="http://images.china.cn/news/attachement/jpg/site3/20130221/6031440789730407638.jpg"/>   
+	<p style="text-align:center;color:red"><strong style="font-size:50px">黑色</strong>大丽花<p>
+    
+    <ul style="color:white">
+        <li><strong>死亡原因：</strong>灵异事件</li>
+        <li><strong>案发低点：</strong>LA</li>
+    </ul>
+     
+	</body>
+</html>
+
+21#table
+
+<table border="1">
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+</table>
+
+
+
+#########################################CSS################################################################
+1.CSS 规则由两个主要的部分构成：选择器，以及一条或多条声明。
+2.选择器
+selector {declaration1; declaration2; ... declarationN }
+selector {property: value}
+3.选择器分享共同申明
+h1,h2,h3,h4,h5,h6 {
+  color: green;
+  }
+4.拜托继承
+如果你不希望 "Verdana, sans-serif" 字体被所有的子元素继承，又该怎么做呢？比方说，你希望段落的字体是 Times。没问题。创建一个针对 p 的特殊规则，这样它就会摆脱父元素的规则：
+body  {
+     font-family: Verdana, sans-serif;
+     }
+
+td, ul, ol, ul, li, dl, dt, dd  {
+     font-family: Verdana, sans-serif;
+     }
+
+p  {
+     font-family: Times, "Times New Roman", serif;
+     }
+	 
+
+
+
+
+
+
+
+
+
