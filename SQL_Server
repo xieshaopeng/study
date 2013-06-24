@@ -208,7 +208,8 @@ cost int null,
 click int null,
 cost_date datetime null)
 
-
-
+26.
+//新增一个字段
+alter table ppdai_mkt..sem_daily_cost add impressions int null
  
  
