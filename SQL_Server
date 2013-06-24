@@ -198,6 +198,17 @@ left join ppdai..Listing lt on lt.BorrowerID=uds.UserId and lt.StatusID <>11
 delete from  ppdai_new..user_reg_listing 
 
 25.
+//create table in ppdai_mkt
+use ppdai_mkt
+go
+create table sem_daily_cost
+(ID int primary key identity(1,1),
+regsourceid int null,
+cost int null,
+click int null,
+cost_date datetime null)
+
+
 
  
  
