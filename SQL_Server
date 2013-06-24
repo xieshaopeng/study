@@ -270,4 +270,11 @@ alter table tabinfo add constraint df default('嘿嘿') for thisname;
 
 
 29.
-//
+//unpivot example
+select name ,[date],[column],num
+from 
+(select b.name,a.cost,a.click,a.impressions,convert(nvarchar,a.cost_date,112)	'date'
+from ppdai_mkt..sem_daily_cost	a
+inner join ppdai_new..regsources  b on a.regsourceid=b.regsourceid)	c
+UNPIVOT
+(num for [column] in (c.[cost],c.[click],c.[impressions]))	d
