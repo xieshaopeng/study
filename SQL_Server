@@ -278,3 +278,33 @@ from ppdai_mkt..sem_daily_cost	a
 inner join ppdai_new..regsources  b on a.regsourceid=b.regsourceid)	c
 UNPIVOT
 (num for [column] in (c.[cost],c.[click],c.[impressions]))	d
+
+
+30.
+//create function
+
+CREATE FUNCTION shasha  (@fphm varchar(50))
+RETURNS varchar(8)
+AS
+BEGIN
+   SET @fphm = replace(@fphm,' ','');
+   SET @fphm = replace(@fphm,'０','0');
+   SET @fphm = replace(@fphm,'１','1');
+   SET @fphm = replace(@fphm,'２','2');
+   SET @fphm = replace(@fphm,'３','3');
+   SET @fphm = replace(@fphm,'４','4');
+   SET @fphm = replace(@fphm,'５','5');
+   SET @fphm = replace(@fphm,'６','6');
+   SET @fphm = replace(@fphm,'７','7');
+   SET @fphm = replace(@fphm,'８','8');
+   SET @fphm = replace(@fphm,'９','9');
+   RETURN(@fphm)
+END
+CREATE TABLE #id_convert(USER_ID INT NOT null,id_number NVARCHAR(60) null)
+INSERT INTO #id_convert (user_id,id_number)
+SELECT userid,IdNumber FROM ppd..UserDetails
+update  #id_convert set id_number = dbo.shasha(id_number) where ASCII(SUBSTRING(id_number,1,1))>57
+SELECT user_id, case WHEN  LEN(id_number)=18 THEN  YEAR(GETDATE())-SUBSTRING(id_number,7,4)
+          WHEN LEN(id_number)=15 THEN (YEAR(GETDATE())-SUBSTRING(id_number,6,2)-1900) ELSE 0 END  age
+FROM #id_convert WHERE LEN(id_number) IN (15,18)
+
