@@ -308,3 +308,8 @@ SELECT user_id, case WHEN  LEN(id_number)=18 THEN  YEAR(GETDATE())-SUBSTRING(id_
           WHEN LEN(id_number)=15 THEN (YEAR(GETDATE())-SUBSTRING(id_number,6,2)-1900) ELSE 0 END  age
 FROM #id_convert WHERE LEN(id_number) IN (15,18)
 
+
+31.
+//cross join
+
+
