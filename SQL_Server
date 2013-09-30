@@ -313,3 +313,58 @@ FROM #id_convert WHERE LEN(id_number) IN (15,18)
 //cross join
 
 
+
+32.
+//跨库查询
+
+SQL Server跨服务器查询
+
+语法格式
+SELECT*
+
+FROMOPENDATASOURCE(
+
+'SQLOLEDB',
+
+'Data Source=ServerName;User ID=sa;Password=sa'
+
+).DataBaseName.dbo.Table
+
+示例：查询Anboo_WuLiu_ErGang数据库的T_CV_Record表中1号转炉记录插入时间大于2011-08-29的信息:
+SELECT*FROM
+
+OPENDATASOURCE(
+
+'SQLOLEDB',
+
+'Data Source=10.8.1.210;User ID=sa;Password=100200').Anboo_WuLiu_Log_ErGang.DBO.T_CV_Record
+
+WHEREInsertTime]] > '2011-08-29'ANDTHHeat=1
+
+收到如下提示的解决办法：
+Msg 15281, Level 16, State 1, Line 1
+
+SQL Server 阻止了对组件'Ad Hoc Distributed Queries' 的STATEMENT 'OpenRowset/OpenDatasource' 的访问，因为此组件已作为此服务器安全配置的一部分而被关闭。系统管理员可以通过使用sp_configure 启用'Ad Hoc Distributed Queries'。有关启用'Ad Hoc Distributed Queries' 的详细信息，请参阅SQL Server 联机丛书中的"外围应用配置器"。
+
+启用Ad Hoc Distributed Queries：
+
+exec sp_configure 'show advanced options',1
+
+reconfigure
+
+exec sp_configure 'Ad Hoc Distributed Queries',1
+
+reconfigure
+
+使用完成后，关闭Ad Hoc Distributed Queries：
+
+exec sp_configure 'Ad Hoc Distributed Queries',0
+
+reconfigure
+
+exec sp_configure 'show advanced options',0
+
+reconfigurez
+
+
+
